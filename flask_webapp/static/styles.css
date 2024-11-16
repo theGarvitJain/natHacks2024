@@ -1,0 +1,51 @@
+/* css file */
+body {
+    font-family: Trebuchet MS, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh; 
+    color: #333;
+}
+div {
+    margin-top: 70px;
+    text-align: center;
+}
+
+h1 {
+    color: #007acc; 
+}
+
+#timer {
+    font-size: 2rem;
+    margin: 20px 0; 
+    padding: 10px 20px;
+    border: 2px solid #007acc;
+    border-radius: 5px;
+    background-color: #e6f7ff; 
+    color: #007acc;
+}
+
+button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 10px; 
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #007acc;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005f99; 
+    transition: 0.5s;
+}
+
+button:active {
+    background-color: #004f80; 
+}

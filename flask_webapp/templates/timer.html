@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Study Session</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        let timerInterval;
+
+        function updateTime() {
+            fetch('/time')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('timer').innerText = data.time;
+                });
+        }
+
+        function startTimer() {
+            fetch('/start', { method: 'POST' })
+                .then(() => {
+                    if (!timerInterval) {
+                        timerInterval = setInterval(updateTime, 1000);
+                    }
+                });
+        }
+
+        function stopTimer() {
+            fetch('/stop', { method: 'POST' })
+                .then(() => {
+                    clearInterval(timerInterval);
+                    timerInterval = null;
+                });
+        }
+
+        function resetTimer() {
+            fetch('/reset', { method: 'POST' })
+                .then(() => {
+                    clearInterval(timerInterval);
+                    timerInterval = null;
+                    updateTime();
+                });
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>My Study Session</h1>
+        <div id="timer">0:00:00</div>
+        <button onclick="startTimer()">Start</button>
+        <button onclick="stopTimer()">Stop</button>
+        <button onclick="resetTimer()">Reset</button>
+    </div>
+</body>
+</html>
