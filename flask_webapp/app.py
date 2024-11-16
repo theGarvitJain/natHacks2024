@@ -39,7 +39,11 @@ def get_time():
     current_time = elapsed_time
     if start_time is not None:
         current_time += datetime.now() - start_time
-    return jsonify({"time": str(current_time)})
+    total_seconds = int(current_time.total_seconds())
+    hours, remainder = divmod(total_seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    formatted_time = f"{hours:02}:{minutes:02}:{seconds:02}"
+    return jsonify({"time": str(formatted_time)})
 
 if __name__ == '__main__':
     app.run(debug=True)
