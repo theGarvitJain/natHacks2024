@@ -1,12 +1,19 @@
 /* css file */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
 body {
     font-family: Trebuchet MS, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f4f8; 
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     height: 100vh; 
     color: #333;
 }
@@ -49,3 +56,66 @@ button:hover {
 button:active {
     background-color: #004f80; 
 }
+
+.toggle-btn {
+    position: relative;
+    width: 300px;
+    height: 120px;
+    padding: 10px;
+    border-radius: 100px;
+    background-color: #45a3c8;
+    /* background-image: url('/static/images/day-bg.jpg'); */
+    background-size: cover;
+    transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+  
+  .toggle-btn .switch {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.25),
+      inset 5px 0 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+    cursor: pointer;
+  }
+  
+  .toggle-btn .focused {
+    color: white;
+    font-size: 30px; /* Larger text for the moon symbol */
+    position: absolute;
+    bottom: 50px;
+    left: 150px;
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+    z-index: 1;
+  }
+  
+  .toggle-btn .unfocused {
+    color: white;
+    font-size: 30px; /* Larger text for the moon symbol */
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    transform: translateY(200%);
+    transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+    z-index: 1;
+  }
+  
+  .toggle-btn.active {
+    /* background-image: url('/static/images/night-bg.jpg'); */
+    background-color: lightpink;
+  }
+  
+  .toggle-btn.active .switch {
+    transform: translateX(calc(300px - 120px));
+  }
+  
+  .toggle-btn.active .unfocused {
+    transform: translateY(0);
+  }
+  
+  .toggle-btn.active .focused {
+    transform: translateY(-200%);
+  }
