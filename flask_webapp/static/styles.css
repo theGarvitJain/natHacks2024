@@ -88,6 +88,7 @@ button:active {
     bottom: 55px;
     left: 150px;
     transform: translateY(0);
+    opacity: 1;
     transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
     z-index: 1;
   }
@@ -99,6 +100,7 @@ button:active {
     bottom: 25px;
     left: 20px;
     transform: translateY(200%);
+    opacity: 0;
     transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
     z-index: 1;
   }
@@ -113,9 +115,11 @@ button:active {
   }
   
   .toggle-btn.active .unfocused {
+    opacity: 1;
     transform: translateY(0);
   }
   
   .toggle-btn.active .focused {
+    opacity: 0;
     transform: translateY(-200%);
   }
