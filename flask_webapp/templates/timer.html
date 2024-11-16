@@ -6,43 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Study Session</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <script>
-        let timerInterval;
-
-        function updateTime() {
-            fetch('/time')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('timer').innerText = data.time;
-                });
-        }
-
-        function startTimer() {
-            fetch('/start', { method: 'POST' })
-                .then(() => {
-                    if (!timerInterval) {
-                        timerInterval = setInterval(updateTime, 1000);
-                    }
-                });
-        }
-
-        function stopTimer() {
-            fetch('/stop', { method: 'POST' })
-                .then(() => {
-                    clearInterval(timerInterval);
-                    timerInterval = null;
-                });
-        }
-
-        function resetTimer() {
-            fetch('/reset', { method: 'POST' })
-                .then(() => {
-                    clearInterval(timerInterval);
-                    timerInterval = null;
-                    updateTime();
-                });
-        }
-    </script>
 </head>
 <body>
     <div>

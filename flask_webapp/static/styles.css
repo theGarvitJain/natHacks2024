@@ -1,5 +1,4 @@
-/* css file comment
-*/
+/* css file */
 * {
     margin: 0;
     padding: 0;
@@ -64,7 +63,7 @@ button:active {
     height: 120px;
     padding: 10px;
     border-radius: 100px;
-    background-color: #45a3c8;
+    background-color: #71b7d3;
     /* background-image: url('/static/images/day-bg.jpg'); */
     background-size: cover;
     transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
@@ -83,8 +82,8 @@ button:active {
   }
   
   .toggle-btn .focused {
-    color: white;
-    font-size: 30px; /* Larger text for the moon symbol */
+    color: #f0f4f8;
+    font-size: 30px; 
     position: absolute;
     bottom: 55px;
     left: 150px;
@@ -94,8 +93,8 @@ button:active {
   }
   
   .toggle-btn .unfocused {
-    color: white;
-    font-size: 30px; /* Larger text for the moon symbol */
+    color: #71b7d3;
+    font-size: 30px; 
     position: absolute;
     bottom: 25px;
     left: 20px;
@@ -106,7 +105,7 @@ button:active {
   
   .toggle-btn.active {
     /* background-image: url('/static/images/night-bg.jpg'); */
-    background-color: lightpink;
+    background-color: #f0f4f8;
   }
   
   .toggle-btn.active .switch {
