@@ -1,4 +1,5 @@
-/* css file */
+/* css file comment
+*/
 * {
     margin: 0;
     padding: 0;
@@ -85,7 +86,7 @@ button:active {
     color: white;
     font-size: 30px; /* Larger text for the moon symbol */
     position: absolute;
-    bottom: 50px;
+    bottom: 55px;
     left: 150px;
     transform: translateY(0);
     transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
@@ -96,8 +97,8 @@ button:active {
     color: white;
     font-size: 30px; /* Larger text for the moon symbol */
     position: absolute;
-    bottom: 15px;
-    left: 15px;
+    bottom: 25px;
+    left: 20px;
     transform: translateY(200%);
     transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
     z-index: 1;
